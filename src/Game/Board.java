@@ -48,6 +48,13 @@ public class Board extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
 
+        if(liveGame){
+            checkFood();
+            checkGameOver();
+            move();
+        }
+
+        repaint();
     }
 
     private void drawGame(Graphics g){
