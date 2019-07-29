@@ -20,8 +20,8 @@ public class Board extends JPanel implements ActionListener {
     private final int y[] = new int [ALL_DOTS];
 
     private int dots;
-    private int apple_x;
-    private int apple_y;
+    private int food_x;
+    private int food_y;
 
     private boolean leftMove = false;
     private boolean rightMove = true;
@@ -72,7 +72,17 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void loadImages(){
+        //TODO Initialize bodyID with png file
+        ImageIcon bodyID = new ImageIcon();
+        body = bodyID.getImage();
 
+        //TODO Initialize foodID with png file
+        ImageIcon foodID = new ImageIcon();
+        food = foodID.getImage();
+
+        //TODO Intialize headID with png file
+        ImageIcon headID = new ImageIcon();
+        head = headID.getImage();
     }
 
     private void initGame(){
