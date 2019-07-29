@@ -2,7 +2,10 @@ package Game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Board extends JPanel implements ActionListener {
 
@@ -42,6 +45,11 @@ public class Board extends JPanel implements ActionListener {
         drawGame(g);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+    }
+
     private void drawGame(Graphics g){
 
     }
@@ -58,6 +66,57 @@ public class Board extends JPanel implements ActionListener {
 
     }
 
+    private void gameOver(Graphics g){
 
+    }
+
+    private void checkFood(){
+
+    }
+
+    private void move(){
+
+    }
+
+    private void checkGameOver(){
+
+    }
+
+    private void locateFood(){
+
+    }
+
+    private class Adapter extends KeyAdapter{
+
+        @Override
+        public void keyPressed(KeyEvent e){
+            int key = e.getKeyCode();
+
+            if((key == KeyEvent.VK_LEFT) && (!rightMove)){
+                leftMove = true;
+                upMove = false;
+                downMove = false;
+            }
+
+            if((key == KeyEvent.VK_RIGHT) && (!leftMove)){
+                rightMove = true;
+                upMove = false;
+                downMove = false;
+            }
+
+            if((key == KeyEvent.VK_UP) && (!downMove)){
+                upMove = true;
+                leftMove = false;
+                rightMove = false;
+            }
+
+            if((key == KeyEvent.VK_DOWN) && (!upMove)){
+                downMove = true;
+                rightMove = false;
+                leftMove = false;
+            }
+
+        }
+    }
 
 }
