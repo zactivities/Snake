@@ -35,7 +35,7 @@ public class Board extends JPanel implements ActionListener {
     private Image food;
 
     public Board(){
-
+        createBoard();
     }
 
     @Override
@@ -55,7 +55,13 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void createBoard(){
+        addKeyListener(new Adapter());
+        setBackground(Color.black);
+        setFocusable(true);
 
+        setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
+        loadImages();
+        initGame();
     }
 
     private void loadImages(){
